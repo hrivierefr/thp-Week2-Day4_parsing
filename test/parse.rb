@@ -6,6 +6,7 @@ require 'open-uri'
 page = Nokogiri::HTML(open("http://en.wikipedia.org/wiki/HTML"))
 puts page.class   # => Nokogiri::HTML::Document
 
+puts page.css('title').text
 
 links = page.css("a")
 

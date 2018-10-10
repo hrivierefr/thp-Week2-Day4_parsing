@@ -27,7 +27,6 @@ end
 
 def get_all_emails_of_a_department (department)
 	department = department.downcase.gsub(" ", "-")
-	emails =[]
 	myhash = {}
 
 	get_all_the_urls_of_a_department_townhalls(department).each { |city|
@@ -37,4 +36,4 @@ def get_all_emails_of_a_department (department)
 	return myhash
 end
 
-puts get_all_emails_of_a_department("val-d-oise")
+puts get_all_emails_of_a_department("Val d Oise")
