@@ -27,13 +27,13 @@ end
 
 def get_all_emails_of_a_department (department)
 	department = department.downcase.gsub(" ", "-")
-	myhash = {}
+	result =[]
 
 	get_all_the_urls_of_a_department_townhalls(department).each { |city|
 		url_city = city.downcase.gsub(" ", "-")
-		myhash[city.capitalize] = get_the_email_of_a_townhall_from_its_webpage(url_city)
+		result << {"city" => city.capitalize, "email" => get_the_email_of_a_townhall_from_its_webpage(url_city)}
 	}
-	return myhash
+	return result
 end
 
 puts get_all_emails_of_a_department("Val d Oise")
